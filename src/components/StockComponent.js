@@ -8,7 +8,7 @@ const TableComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/stocks');
+        const response = await axios.get('https://trade-server-peach.vercel.app//stocks');
         setCryptoData(response.data);
         console.log('Crypto data fetched:', response.data);
       } catch (error) {
@@ -38,7 +38,7 @@ const TableComponent = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:3000/list', {
+      const response = await axios.post('https://trade-server-peach.vercel.app//list', {
         symbol,
         name,
         stocks,
@@ -124,7 +124,7 @@ const TableComponent = () => {
     console.log(selectedAsset);
   
     try {
-      const response = await fetch(`http://localhost:3000/stock/${index}`, {
+      const response = await fetch(`https://trade-server-peach.vercel.app//stock/${index}`, {
         method: 'DELETE',
       });
   
