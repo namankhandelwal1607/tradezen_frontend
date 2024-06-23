@@ -9,7 +9,7 @@ const TableComponent = () => {
   useEffect(() => {
     const fetchPortfolio = async () => {
       try {
-        const response = await fetch('http://localhost:3000/portfolio');
+        const response = await fetch('https://trade-server-peach.vercel.app//portfolio');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -42,7 +42,7 @@ const TableComponent = () => {
   
     try {
       const { symbol, price, name, stocks } = selectedCryptoForSell;
-      const response = await fetch(`http://localhost:3000/portfolio/${symbol}/${price}/${name}/${stocks}`, {
+      const response = await fetch(`https://trade-server-peach.vercel.app/portfolio/${symbol}/${price}/${name}/${stocks}`, {
         method: 'DELETE',
       });
   
